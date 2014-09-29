@@ -21,14 +21,28 @@ button.small_button{
 				<fieldset data-role="controlgroup">
 					<legend><font size="5">Recommendation settings:</font></legend>
 					<ol id="selectable">
-					<button  class= "ui-btn index_button">Time
-					<button  class= "ui-btn index_button">Area
-					<button  class= "ui-btn index_button">Interest
+					<button  id="time_button" class= "ui-btn index_button">Time
+					<button  id="area_button" class= "ui-btn index_button">Area
+					<button  id="interest_button" class= "ui-btn index_button">Interest
 					</ol>
 				</fieldset>
 			</div>
 			<div style="margin-top:15%;margin-left:55%;">
-				<button  class= "ui-btn small_button">Go!</button>
+				<button  id="go_button" class= "ui-btn small_button">Go!</button>
 			</div>
+<script>
+document.getElementById("go_button").onclick = function() {
+	window.location.href="results.html";
+}
+document.getElementById("time_button").onclick = function() {
+	window.location.href="selectTime.html";
+}
+document.getElementById("area_button").onclick = function() {
+	window.location.href="selectArea.html";
+}
+document.getElementById("interest_button").onclick = function() {
+	window.location.href="selectInterest.html";
+}
+</script>
 </body>
 </html>
