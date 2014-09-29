@@ -1,0 +1,9 @@
+p.pos_left{
+	position:relative;
+	left:-200px;
+}
+p.pos_right{
+	position:relative;
+	left: 75%;
+}
+

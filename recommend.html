@@ -6,11 +6,29 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 </head>
+<style>
+button.index_button{
+	width:150px;
+	height:50px;
+}
+button.small_button{
+	width:80px;
+	height:50px;
+}
+</style>
 <body>
-	<div style="position:relative;top:100px;">
-	<center><button class="ui-btn ui-btn-inline" style="width:120px;height:60px;">Time</button></center>
-	<center><button class="ui-btn ui-btn-inline" style="width:120px;height:60px;">Area</button></center>
-	<center><button class="ui-btn ui-btn-inline" style="width:120px;height:60px">Interests</button></center>
-	</div>
+			<div style="margin-top:35%;">	
+				<fieldset data-role="controlgroup">
+					<legend><font size="5">Recommendation settings:</font></legend>
+					<ol id="selectable">
+					<button  class= "ui-btn index_button">Time
+					<button  class= "ui-btn index_button">Area
+					<button  class= "ui-btn index_button">Interest
+					</ol>
+				</fieldset>
+			</div>
+			<div style="margin-top:15%;margin-left:55%;">
+				<button  class= "ui-btn small_button">Go!</button>
+			</div>
 </body>
 </html>
