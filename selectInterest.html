@@ -7,9 +7,9 @@
 <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <style>
-p.pos_right{
+div.pos_right{
 	position:relative;
-	left: 40%;
+	left: 45%;
 }
 </style>
 </head>
@@ -36,12 +36,20 @@ p.pos_right{
 				</fieldset>
 				
 			
-			<label for="maxPeople">Choose the max people you want to join in:</lable>
-			<input type="range" name="maxPeople" id="maxPeople" value="1" min="1" max="20" step="1" data-highlight="true">
-			<p class="pos_right"><input type="reset" data-inline="true" value="Clear"><input type="submit" data-inline="true" value="Submit"></P>
+				<label for="maxPeople">Choose the max people you want to join in:</lable>
+				<input type="range" name="maxPeople" id="maxPeople" value="1" min="1" max="20" step="1" data-highlight="true">
+				<div class="pos_right">
+					<input type="reset" data-inline="true" value="Clear">
+					<input id="done_button" type="button" data-inline="true" value="Done">
+				</div>			
 			</form>
 		</div>
 		
 	</div>
+<script>
+document.getElementById("done_button").onclick = function() {
+	window.location.href="recommend.html";
+}
+</script>
 </body>
 </html>

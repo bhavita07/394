@@ -11,9 +11,9 @@ p.pos_left{
 position:relative;
 left:-200px;
 }
-p.pos_right{
+div.pos_right{
 position:relative;
-left: 75%;
+left: 15%;
 }
 </style>
 </head>
@@ -37,11 +37,21 @@ left: 75%;
 
 </ol>
 </fieldset>
-<p class="pos_right">
-<input type="reset" data-inline="true" value="Clear">
-<input type="button" data-inline="true" value="Next">
+			<div class="pos_right">
+				<input type="reset" data-inline="true" value="Clear">
+				<input id="next_button" type="button" data-inline="true" value="Next">
+				<input id="done_button" type="button" data-inline="true" value="Done">
+			</div>
 </form>
 </div>
 </div>
+<script>
+document.getElementById("next_button").onclick = function() {
+	window.location.href="selectArea.html";
+}
+document.getElementById("done_button").onclick = function() {
+	window.location.href="recommend.html";
+}
+</script>
 </body>
 </html>
