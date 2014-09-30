@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+</head>
+<style>
+button.filter_button{
+	width:70px;
+	height:33px;
+	padding: 0px;
+}
+.aParent div{
+  float: left;
+  clear: none; 
+}
+</style>
+<body>
+<div class="aParent" style="height:80px;">
+  <div style="margin-left:5%;margin-top:5%;height:80%;width:60%;">
+	<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+		<input type="radio" name="radio-choice-h-6" id="radio-choice-h-6a" value="on">
+		<label for="radio-choice-h-6a">Time</label>
+		<input type="radio" name="radio-choice-h-6" id="radio-choice-h-6b" value="off" checked="checked">
+		<label for="radio-choice-h-6b">Area</label>
+		<input type="radio" name="radio-choice-h-6" id="radio-choice-h-6c" value="other">
+		<label for="radio-choice-h-6c">Interest</label>
+	</fieldset>
+   </div>
+   <div style="margin-top:5%;margin-left:8%">
+		<button id="filter_button" class= "ui-btn filter_button">Filter</button>
+   </div>
+</div>
+
+<div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+    <div data-role="collapsible" >
+        <h3>Norris</h3>
+		<p>
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">	
+				<div data-role="collapsible">
+					<h3>Student Activity Fair</h3>
+					<p> Student groups will recruit on site...<a href="#">details</a></p>
+					<p> Date: 09/27</p>
+					<p> You have <a href="#">10</a> friends going</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>play pool</h3>
+					<p> Play pool...<a href="#">details</a></p>
+					<p> Date: 10/02</p>
+					<p> Invited by: <a href="#">James Bond</a></p>
+					<p> You have <a href="#">3</a> friends going</p>
+				</div>
+			</div>
+		</p>
+    </div>
+    <div data-role="collapsible">
+        <h3>SPAC</h3>
+		<p>
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">	
+				<div data-role="collapsible">
+					<h3>Morning Jogging</h3>
+					<p> Jogging...<a href="#">details</a></p>
+					<p> Date: 10/02</p>
+					<p> Start: Norris</p>
+					<p> Destination: Bahai Temple</p>
+					<p> Estimated time: 50 mins</p>
+					<p> There are <a href="#">2</a> people going</p>
+				</div>
+			</div>
+		</p>
+    </div>
+    <div data-role="collapsible" >
+        <h3>Tech</h3>
+		<p>
+			<div data-role="collapsibleset" data-theme="a" data-content-theme="a">	
+				<div data-role="collapsible">
+					<h3>Study Group EECS 343</h3>
+					<p> Type: For exam...<a href="#">details</a></p>
+					<p> Date: 10/16</p>
+					<p> There are <a href="#">5</a> people going</p>
+				</div>
+			</div>
+		</p>
+    </div>
+    <div data-role="collapsible">
+        <h3>Kellog</h3>
+    <p>I'm the collapsible content for section 3</p>
+    </div>
+</div>
+
+<script>
+document.getElementById("filter_button").onclick = function() {
+	window.location.href="recommend.html";
+}
+</script>
+
+
+</body>
+</html>
