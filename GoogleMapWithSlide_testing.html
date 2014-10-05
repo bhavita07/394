@@ -12,42 +12,53 @@ src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6
 
 <style>
 .icon_Size{
-	width:20px;
-	height:20px;
+  width:20px;
+  height:20px;
 }
 </style>
 
 <script>
 function MenuControl(controlDiv, map) {
-	controlDiv.style.padding = '20px';
-	controlDiv.style.width = '80px';
-	controlDiv.style.height = '100px';
+  controlDiv.style.padding = '20px';
+  controlDiv.style.width = '80px';
+  controlDiv.style.height = '100px';
 
-	var controlUI = document.createElement('div');
-	//controlUI.href = "#overlayPanel";
-	//controlUI.style.href = "#overlayPanel";
-	controlUI.style.backgroundColor = 'yellow';
-	controlUI.style.border = '1px solid';
-	controlUI.style.cursor = 'pointer';
-	controlUI.style.textAlign = 'center';
-	controlUI.title = 'Back To Menu';
-	controlDiv.appendChild(controlUI);
+  
 
-	var controlText = document.createElement('div');
-	//controlText.style.href = "#overlayPanel";
-	controlText.style.fontFamily = 'Arial';
-	controlText.style.fontSize = '12px';
-	controlText.style.paddingLeft = '4px';
-	controlText.style.paddingRight = '4px';
-	controlText.innerHTML = 'Menu';
-	controlUI.appendChild(controlText);
 
-	google.maps.event.addDomListener(controlUI, 'click', function(){
-		//$(this).repalcewith(#overlayPanel);
-		//document.getElementById("overlayPanel");
-		//$('a').href("#overlayPanel");
-		document.getElementById("overlayPanel");
-	});
+  var controlUI = document.createElement('div');
+  //controlUI.href = "#overlayPanel";
+  //controlUI.style.href = "#overlayPanel";
+  controlUI.setAttribute("href", "#overlayPanel");
+  controlUI.style.backgroundColor = 'yellow';
+  controlUI.style.border = '1px solid';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Back To Menu';
+  controlDiv.appendChild(controlUI);
+
+  var controlSpace = document.createElement('a');
+  controlSpace.setAttribute("href", "#overlayPanel");
+  controlUI.appendChild(controlSpace);
+
+  var controlText = document.createElement('div');
+  //controlText.style.href = "#overlayPanel";
+  controlText.setAttribute("href", "#overlayPanel");
+  controlText.style.fontFamily = 'Arial';
+  controlText.style.fontSize = '12px';
+  controlText.style.paddingLeft = '4px';
+  controlText.style.paddingRight = '4px';
+  controlText.innerHTML = 'Menu';
+  controlSpace.appendChild(controlText);
+
+  /*
+  google.maps.event.addDomListener(controlUI, 'click', function(){
+    //$(this).repalcewith(#overlayPanel);
+    //document.getElementById("overlayPanel");
+    //$('a').href("#overlayPanel");
+    document.getElementById("overlayPanel");
+  });
+  */
 }
 
 
@@ -124,10 +135,10 @@ google.maps.event.addListener(marker, 'click', function() {
 }
 
 function myClick() {
-	//location.href("#overlayPanel");
-	//document.getElementById("elemt").href;
-	//document.getElementById("overlayPanel").addEventListener("click");
-	//$('a').href(#overlayPanel);
+  //location.href("#overlayPanel");
+  //document.getElementById("elemt").href;
+  //document.getElementById("overlayPanel").addEventListener("click");
+  //$('a').href(#overlayPanel);
 
 
 
@@ -154,9 +165,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <button onclick="myClick()">Overlay Panel</button></div>
 
 <div data-role="panel" id="overlayPanel" data-display="overlay"> 
-    <h2>Overlay Panel</h2>
-    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
-    <a href="#googleMap" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+    <h2>Selections:</h2>
+    <p>Selections:</p>
+    <a href="#googleMap" data-rel="close" ></a>
 </div> 
 
 
