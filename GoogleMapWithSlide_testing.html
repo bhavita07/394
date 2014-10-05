@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+<style>
+.icon_Size{
+	width:20px;
+	height:20px;
+}
+</style>
+
+<script>
+function MenuControl(controlDiv, map) {
+	controlDiv.style.padding = '20px';
+	controlDiv.style.width = '80px';
+	controlDiv.style.height = '100px';
+
+	var controlUI = document.createElement('div');
+	//controlUI.href = "#overlayPanel";
+	//controlUI.style.href = "#overlayPanel";
+	controlUI.style.backgroundColor = 'yellow';
+	controlUI.style.border = '1px solid';
+	controlUI.style.cursor = 'pointer';
+	controlUI.style.textAlign = 'center';
+	controlUI.title = 'Back To Menu';
+	controlDiv.appendChild(controlUI);
+
+	var controlText = document.createElement('div');
+	//controlText.style.href = "#overlayPanel";
+	controlText.style.fontFamily = 'Arial';
+	controlText.style.fontSize = '12px';
+	controlText.style.paddingLeft = '4px';
+	controlText.style.paddingRight = '4px';
+	controlText.innerHTML = 'Menu';
+	controlUI.appendChild(controlText);
+
+	google.maps.event.addDomListener(controlUI, 'click', function(){
+		//$(this).repalcewith(#overlayPanel);
+		//document.getElementById("overlayPanel");
+		//$('a').href("#overlayPanel");
+		document.getElementById("overlayPanel");
+	});
+}
+
+
+var myCenter=new google.maps.LatLng(42.0561438,-87.67617702);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:15,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var mapDiv = document.getElementById("googleMap");
+
+var map=new google.maps.Map(mapDiv,mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  icon:'mapIconTest.jpg'
+  });
+
+marker.setMap(map);
+
+  var menuControlDiv = document.createElement('div');
+  var menuControl = new MenuControl(menuControlDiv, map);
+//  homeControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(menuControlDiv);
+
+
+
+var myCity = new google.maps.Circle({
+  center:myCenter,
+  radius:300,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+  });
+
+myCity.setMap(map);
+
+var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+      'Aboriginal people of the area. It has many springs, waterholes, '+
+      'rock caves and ancient paintings. Uluru is listed as a World '+
+      'Heritage Site.</p>'+
+      '<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'http://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      '(last visited June 22, 2009).</p>'+
+      '</div>'+
+      '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+  content: contentString
+  
+  });
+
+google.maps.event.addListener(marker, 'click', function() {
+  infowindow.open(map,marker);
+  });
+
+
+}
+
+function myClick() {
+	//location.href("#overlayPanel");
+	//document.getElementById("elemt").href;
+	//document.getElementById("overlayPanel").addEventListener("click");
+	//$('a').href(#overlayPanel);
+
+
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+</head>
+
+<body>
+<div id="googleMap" style="position:relative;width:320px;height:568px;">
+</div>
+
+<div id="11111" style="position:relative;top:-50; left:5;  font-size:20px; z-index:5;">
+<a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Overlay Panel</a>
+</div>
+
+<div><a href="#overlayPanel">
+<button >Overlay Panel</button></a></div>
+
+<div>
+<button onclick="myClick()">Overlay Panel</button></div>
+
+<div data-role="panel" id="overlayPanel" data-display="overlay"> 
+    <h2>Overlay Panel</h2>
+    <p>You can close the panel by clicking outside the panel, pressing the Esc key, by swiping, or by clicking the button below:</p>
+    <a href="#googleMap" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
+</div> 
+
+
+</body>
+</html>
