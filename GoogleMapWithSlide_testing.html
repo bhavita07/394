@@ -77,8 +77,14 @@ var map=new google.maps.Map(mapDiv,mapProp);
 
 var marker=new google.maps.Marker({
   position:myCenter,
-  icon:'mapIconTest.jpg'
+  icon:'111111.png'
+  //icon.setAttribute("width","10px");
+  //icon.setAttribute("height","10px");
   });
+//marker.setAttribute("width","10px");
+//marker.setAttribute("height","10px");
+//marker.style.width = '10px';
+//marker.style.height = '10px';
 
 marker.setMap(map);
 
@@ -154,15 +160,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="googleMap" style="position:relative;width:320px;height:568px;">
 </div>
 
-<div id="11111" style="position:relative;top:-50; left:5;  font-size:20px; z-index:5;">
-<a href="#overlayPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">Overlay Panel</a>
-</div>
-
-<div><a href="#overlayPanel">
-<button >Overlay Panel</button></a></div>
-
-<div>
-<button onclick="myClick()">Overlay Panel</button></div>
 
 <div data-role="panel" id="overlayPanel" data-display="overlay"> 
     <h2>Selections:</h2>
