@@ -16,9 +16,10 @@ button.index_button{
 	<center>
 	<center><img src= "logo.png" alt= "Logo" style = "width:198px; height:202px"></center>
 	<div style= "align-content:space-between;">
-		<center><button class= "ui-btn index_button" style="margin-top:30px;">Create</button></center>
+		<center><button id="create_button" class= "ui-btn index_button" style="margin-top:30px;">Create</button></center>
 		<center><button id="recommend_button" class= "ui-btn index_button">Recommend</button></center>
-		<center><button id="results_button" class= "ui-btn index_button">Click Me!</button></center>
+		<!--<center><button id="results_button" class= "ui-btn index_button">Click Me!</button></center>
+		-->
 		<center><button class= "ui-btn index_button">Search</button></center>
 	</div>
 	</center>
@@ -26,8 +27,8 @@ button.index_button{
 document.getElementById("recommend_button").onclick = function() {
 	window.location.href="GoogleMapWithSlide_testing.html";
 }
-document.getElementById("results_button").onclick = function() {
-	window.location.href="results.html";
+document.getElementById("create_button").onclick = function() {
+	window.location.href="recommend.html";
 }
 </script>
 </body>

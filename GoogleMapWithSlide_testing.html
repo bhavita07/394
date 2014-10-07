@@ -19,7 +19,8 @@ src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6
 
 <script>
 function MenuControl(controlDiv, map) {
-  controlDiv.style.padding = '20px';
+  controlDiv.style.padding = '25px';
+  controlDiv.style.paddingLeft = '20px';
   controlDiv.style.width = '80px';
   controlDiv.style.height = '100px';
 
@@ -61,6 +62,49 @@ function MenuControl(controlDiv, map) {
   */
 }
 
+function BackControl(controlDiv, map) {
+  controlDiv.style.padding = '25px';
+  controlDiv.style.paddingLeft = '20px';
+  //controlDiv.style.paddingRight = '100px';
+  controlDiv.style.width = '80px';
+  controlDiv.style.height = '100px';
+
+  var controlUI = document.createElement('div');
+  //controlUI.href = "#overlayPanel";
+  //controlUI.style.href = "#overlayPanel";
+  //controlUI.setAttribute("href", "index.html");
+  controlUI.style.backgroundColor = 'yellow';
+  controlUI.style.border = '1px solid';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = 'Back To Menu';
+  controlDiv.appendChild(controlUI);
+
+  //var controlSpace = document.createElement('a');
+  //controlSpace.setAttribute("href", "index.html");
+  //controlUI.appendChild(controlSpace);
+
+  var controlText = document.createElement('div');
+  //controlText.style.href = "#overlayPanel";
+  //controlText.setAttribute("href", "index.html");
+  controlText.style.fontFamily = 'Arial';
+  controlText.style.fontSize = '12px';
+  controlText.style.paddingLeft = '4px';
+  controlText.style.paddingRight = '4px';
+  controlText.innerHTML = 'Back';
+  controlUI.appendChild(controlText);
+  //controlSpace.appendChild(controlText);
+
+  google.maps.event.addDomListener(controlUI, 'click', function(){
+    //$(this).repalcewith(#overlayPanel);
+    //document.getElementById("overlayPanel");
+    //$('a').href("#overlayPanel");
+    //document.getElementById("overlayPanel");
+    window.location.href = "index.html";
+  });
+
+}
+
 
 var myCenter=new google.maps.LatLng(42.0561438,-87.67617702);
 
@@ -92,6 +136,10 @@ marker.setMap(map);
   var menuControl = new MenuControl(menuControlDiv, map);
 //  homeControlDiv.index = 1;
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(menuControlDiv);
+
+  var backControlDiv = document.createElement('div');
+  var backControl = new BackControl(backControlDiv, map);
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(backControlDiv);
 
 
 
