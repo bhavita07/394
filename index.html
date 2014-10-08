@@ -2,11 +2,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 
-<h4 class="title" style = "margin:20px">Search Parters to Study Now ~</h4>
+<h4 class="title" style = "margin:20px">Search Parters to Study Now ~</h4> 
 
 </head>
 <style>
@@ -34,17 +36,20 @@ button.index_button{
               
          </select>
 		
-		 <button id="submitButton" style = "margin-top:50px">Search Now !</button>
+		 <button id="submitButton" style = "margin-top:50px" onclick="myFunction()"“>Search Now !</button>
+		 
+
 	</form>
 
 	</center>
+
 <script>
-document.getElementById("submitButton").onclick = function() {
-	window.location.href="GoogleMapWithSlide_testing.html";
-}
-document.getElementById("create_button").onclick = function() {
-	window.location.href="recommend.html";
+function myFunction() {
+    //document.getElementById("submitButton").color = "red";
+    window.location.href="GoogleMapWithSlide_testing.html";
 }
 </script>
+
+
 </body>
 </html>

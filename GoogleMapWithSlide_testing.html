@@ -19,20 +19,15 @@ src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6
 
 <script>
 function MenuControl(controlDiv, map) {
-  controlDiv.style.padding = '25px';
-  controlDiv.style.paddingLeft = '20px';
-  controlDiv.style.width = '80px';
-  controlDiv.style.height = '100px';
 
   
-
-
   var controlUI = document.createElement('div');
   //controlUI.href = "#overlayPanel";
   //controlUI.style.href = "#overlayPanel";
   controlUI.setAttribute("href", "#overlayPanel");
-  controlUI.style.backgroundColor = 'yellow';
-  controlUI.style.border = '1px solid';
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.margin = '10px';
+  controlUI.style.border = '2px solid';
   controlUI.style.cursor = 'pointer';
   controlUI.style.textAlign = 'center';
   controlUI.title = 'Back To Menu';
@@ -49,7 +44,7 @@ function MenuControl(controlDiv, map) {
   controlText.style.fontSize = '12px';
   controlText.style.paddingLeft = '4px';
   controlText.style.paddingRight = '4px';
-  controlText.innerHTML = 'Menu';
+  controlText.innerHTML = 'Select Course';
   controlSpace.appendChild(controlText);
 
   /*
@@ -63,18 +58,19 @@ function MenuControl(controlDiv, map) {
 }
 
 function BackControl(controlDiv, map) {
-  controlDiv.style.padding = '25px';
-  controlDiv.style.paddingLeft = '20px';
+  //controlDiv.style.padding = '25px';
+  //controlDiv.style.paddingLeft = '20px';
   //controlDiv.style.paddingRight = '100px';
-  controlDiv.style.width = '80px';
-  controlDiv.style.height = '100px';
+  //controlDiv.style.width = '80px';
+  //controlDiv.style.height = '100px';
 
   var controlUI = document.createElement('div');
   //controlUI.href = "#overlayPanel";
   //controlUI.style.href = "#overlayPanel";
   //controlUI.setAttribute("href", "index.html");
-  controlUI.style.backgroundColor = 'yellow';
-  controlUI.style.border = '1px solid';
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.border = '2px solid';
+  controlUI.style.margin = '10px';
   controlUI.style.cursor = 'pointer';
   controlUI.style.textAlign = 'center';
   controlUI.title = 'Back To Menu';
@@ -109,17 +105,20 @@ function BackControl(controlDiv, map) {
 var myCenter=new google.maps.LatLng(42.0561438,-87.67617702);
 
 function initialize() {
-var mapProp = {
-  center:myCenter,
-  zoom:15,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
+  var mapProp = {
+    center:myCenter,
+    zoom:15,
+    mapTypeControl:false,
+    zoomControl:false,
+    streetViewControl:false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 
-var mapDiv = document.getElementById("googleMap");
+  var mapDiv = document.getElementById("googleMap");
 
-var map=new google.maps.Map(mapDiv,mapProp);
+  var map=new google.maps.Map(mapDiv,mapProp);
 
-var marker=new google.maps.Marker({
+  var marker=new google.maps.Marker({
   position:myCenter,
   icon:'111111.png'
   //icon.setAttribute("width","10px");
@@ -135,11 +134,11 @@ marker.setMap(map);
   var menuControlDiv = document.createElement('div');
   var menuControl = new MenuControl(menuControlDiv, map);
 //  homeControlDiv.index = 1;
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(menuControlDiv);
+  map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(menuControlDiv);
 
   var backControlDiv = document.createElement('div');
   var backControl = new BackControl(backControlDiv, map);
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(backControlDiv);
+  map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(backControlDiv);
 
 
 
@@ -212,12 +211,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div data-role="panel" id="overlayPanel" data-display="overlay"> 
     <h2>Selections:</h2>
     <ul data-role="listview" data-filter="true" data-filter-placeholder="Search study group" data-inset="true">
+      <li><a href="#">EECS 214</a></li>
+      <li><a href="#">EECS 336</a></li>
+      <li><a href="#">EECS 355</a></li>
+      <li><a href="#">EECS 361</a></li>
       <li><a href="#">EECS 394</a></li>
-      <li><a href="#">EECS 343</a></li>
-      <li><a href="#">Operation System</a></li>
-      <li><a href="#">Database</a></li>
-      <li><a href="#">214 Data Structure</a></li>
-      <li><a href="#">HTML/CSS/JavaScript</a></li>
+      <li><a href="#">EECS 453</a></li>
     </ul>
     <a href="#googleMap" data-rel="close" ></a>
 </div> 
