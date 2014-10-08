@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+<h4 class="title" style = "margin:20px">Search Parters to Study Now ~</h4>
+
 </head>
 <style>
 button.index_button{
@@ -14,17 +17,29 @@ button.index_button{
 </style>
 <body>
 	<center>
-	<center><img src= "logo.png" alt= "Logo" style = "width:198px; height:202px"></center>
-	<div style= "align-content:space-between;">
-		<center><button id="create_button" class= "ui-btn index_button" style="margin-top:30px;">Create</button></center>
-		<center><button id="recommend_button" class= "ui-btn index_button">Recommend</button></center>
-		<!--<center><button id="results_button" class= "ui-btn index_button">Click Me!</button></center>
-		-->
-		<center><button class= "ui-btn index_button">Search</button></center>
-	</div>
+	<center><img src= "logo.png" alt= "Logo" style = "width:110px; height:110px"></center>
+	
+	<form style="margin-left:30px; margin-right:30px;">
+		User Name: <input type="text" name="username"><br>
+		Phone Number: <input type="text" name="phonenumber"><br>
+
+		<select style="width:200px;margin-left:40px;margin-bottom:50px; height: 50px;" size=1 name = "course">
+              
+              <option value="eecs214">EECS 214</option>
+              <option value="eecs336">EECS 336</option>
+              <option value="eecs355">EECS 355</option>
+              <option value="eecs361">EECS 361</option>
+              <option value="eecs394">EECS 394</option>
+              <option value="eecs453">EECS 453</option>
+              
+         </select>
+		
+		 <button id="submitButton" style = "margin-top:50px">Search Now !</button>
+	</form>
+
 	</center>
 <script>
-document.getElementById("recommend_button").onclick = function() {
+document.getElementById("submitButton").onclick = function() {
 	window.location.href="GoogleMapWithSlide_testing.html";
 }
 document.getElementById("create_button").onclick = function() {
